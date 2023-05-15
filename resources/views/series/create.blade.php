@@ -19,7 +19,7 @@
                        id="seasonQty"
                        name="seasonQty"
                        class="form-control"
-                       value="{{ old('seasonQty') }}">
+                       value="{{ old('seasonsQty') }}">
             </div>
 
             <div class="col-2">
