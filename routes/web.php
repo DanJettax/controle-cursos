@@ -24,5 +24,6 @@ Route::resource('/series', SeriesController::class)
 
 Route::get('/series/{series}/seasons', [SeasonsController::class, 'index'])->name('seasons.index');
 
+Route::get('/delta-create', [SeriesController::class, 'deltaCreate'])->name('delta.create');
 
 

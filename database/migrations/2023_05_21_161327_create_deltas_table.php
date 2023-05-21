@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('episodes', function (Blueprint $table) {
+        Schema::create('deltas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedTinyInteger('number');
-            $table->foreignId('season_id')->constrained()->onDelete('cascade');
+            $table->string('nome');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('episodes');
+        Schema::dropIfExists('deltas');
     }
 };

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SeriesFormRequest;
+use App\Models\Delta;
 use App\Models\Episode;
 use App\Models\Season;
 use App\Models\Series;
@@ -20,37 +21,25 @@ class SeriesController extends Controller
             ->with('mensagemSucesso', $mensagemSucesso);
     }
 
-    public function create()
+    /*public function create()
     {
         return view('series.create');
+
+    }*/
+
+    public function create()
+    {
+        $deltas = Delta::pluck('nome', 'id');
+        return view('series.create', compact('deltas'));
     }
 
-    public function store(SeriesFormRequest $request)
-    {
-        $serie = Series::create($request->all());
-        $seasons = [];
-        for ($i = 1; $i <= $request->seasonsQty; $i++) {
-            $seasons[] = [
-                'series_id' => $serie->id,
-                'number' => $i,
-            ];
-        }
-        Season::insert($seasons);
-        
-        $episodes = [];
-        foreach ($serie->seasons as $season) {
-            for ($j = 1; $j <= $request->episodesPerSeason; $j++) {
-                $season->episodes()->create([
-                    'season_id' => $season->id,
-                    'number' => $j
-                ]);
-            }
-        }
-        Episode::insert($episodes);
+    public function store(SeriesFormRequest $request)    {
 
+
+       $serie = Series::create($request->all());
 
         return to_route('series.index')
-            ->with('mensagem.sucesso', "Série '{$serie->nome}' adicionada com sucesso");
+            ->with('mensagem.sucesso', "Análise '{$serie->id}' adicionada com sucesso");
     }
 
     public function destroy(Series $series)
@@ -58,7 +47,7 @@ class SeriesController extends Controller
         $series->delete();
 
         return to_route('series.index')
-            ->with('mensagem.sucesso', "Série '{$series->nome}' removida com sucesso");
+            ->with('mensagem.sucesso', "Série '{$series->id}' removida com sucesso");
     }
 
     public function edit(Series $series)
@@ -75,4 +64,5 @@ class SeriesController extends Controller
         return to_route('series.index')
             ->with('mensagem.sucesso', "Série '{$series->nome}' atualizada com sucesso");
     }
+
 }

@@ -15,7 +15,17 @@ return new class extends Migration
     {
         Schema::create('series', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 128);
+            $table->string('color_nome');
+            $table->integer('bc_batch');
+            $table->string('vin');
+            $table->string('model');
+            $table->string('part');
+            $table->boolean('delta');
+            $table->Float('result_15');
+            $table->Float('result_25');
+            $table->Float('result_45');
+            $table->Float('result_75');
+            $table->Float('result_110');
             $table->timestamps();
         });
     }

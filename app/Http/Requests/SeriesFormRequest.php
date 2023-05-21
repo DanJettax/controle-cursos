@@ -24,7 +24,17 @@ class SeriesFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => ['required','min:3']
+            'color_nome' => ['required'],
+            'bc_batch' => ['required'],
+            'vin' => ['required'],
+            'model' => ['required'],
+            'part' => ['required'],
+            'deltas' => ['required'],
+            'result_15' => ['required'],
+            'result_25' => ['required'],
+            'result_45' => ['required'],
+            'result_75' => ['required'],
+            'result_110' => ['required'],
         ];
     }
 }
