@@ -6,23 +6,97 @@
             <div class="row mb-3">
                 <div class="col">
                     <label for="color_nome" class="form-label">color_nome</label>
-                    <input type="text" autofocus id="color_nome" name="color_nome" class="form-control" value="{{ old('color_nome') }}">
+                    <div class="input-group">
+                        <select id="color_nome" name="color_nome" class="form-select">
+                            <option value="">Selecione</option>
+                            @foreach ($cors as $id => $nome)
+                                <option value="{{ $id }}">{{ $nome }}</option>
+                            @endforeach
+                        </select>
+                        <div class="input-group-append">
+                            <ul class="dropdown-menu">
+                                @foreach ($cors as $id => $nome)
+                                    <option value="{{ $id }}">{{ $nome }}</option>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
                     <label for="bc_batch" class="form-label">bc_batch</label>
-                    <input type="text" autofocus id="bc_batch" name="bc_batch" class="form-control" value="{{ old('bc_batch') }}">
+                    <div class="input-group">
+                        <select id="bc_batch" name="bc_batch" class="form-select">
+                            <option value="">Selecione</option>
+                            @foreach ($deltas as $id => $nome)
+                                <option value="{{ $id }}">{{ $nome }}</option>
+                            @endforeach
+                        </select>
+                        <div class="input-group-append">
+                            <ul class="dropdown-menu">
+                                @foreach ($deltas as $id => $nome)
+                                    <option value="{{ $id }}">{{ $nome }}</option>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
                     <label for="vin" class="form-label">vin</label>
                     <input type="text" autofocus id="vin" name="vin" class="form-control" value="{{ old('vin') }}">
                 </div>
                 <div class="col">
+                    <label for="bc_batch" class="form-label">bc_batch</label>
+                    <div class="input-group">
+                        <select id="bc_batch" name="bc_batch" class="form-select">
+                            <option value="">Selecione</option>
+                            @foreach ($deltas as $id => $nome)
+                                <option value="{{ $id }}">{{ $nome }}</option>
+                            @endforeach
+                        </select>
+                        <div class="input-group-append">
+                            <ul class="dropdown-menu">
+                                @foreach ($deltas as $id => $nome)
+                                    <option value="{{ $id }}">{{ $nome }}</option>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
                     <label for="model" class="form-label">model</label>
-                    <input type="text" autofocus id="model" name="model" class="form-control" value="{{ old('model') }}">
+                    <div class="input-group">
+                        <select id="model" name="model" class="form-select">
+                            <option value="">Selecione</option>
+                            @foreach ($deltas as $id => $nome)
+                                <option value="{{ $id }}">{{ $nome }}</option>
+                            @endforeach
+                        </select>
+                        <div class="input-group-append">
+                            <ul class="dropdown-menu">
+                                @foreach ($deltas as $id => $nome)
+                                    <option value="{{ $id }}">{{ $nome }}</option>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
                     <label for="part" class="form-label">part</label>
-                    <input type="text" autofocus id="part" name="part" class="form-control" value="{{ old('part') }}">
+                    <div class="input-group">
+                        <select id="part" name="part" class="form-select">
+                            <option value="">Selecione</option>
+                            @foreach ($deltas as $id => $nome)
+                                <option value="{{ $id }}">{{ $nome }}</option>
+                            @endforeach
+                        </select>
+                        <div class="input-group-append">
+                            <ul class="dropdown-menu">
+                                @foreach ($deltas as $id => $nome)
+                                    <option value="{{ $id }}">{{ $nome }}</option>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

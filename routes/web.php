@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CorsController;
 use App\Http\Controllers\SeasonsController;
 use App\Http\Controllers\SeriesController;
 use Illuminate\Support\Facades\Route;
@@ -22,8 +23,13 @@ Route::get('/', function () {
 Route::resource('/series', SeriesController::class)
     ->only(['index', 'create', 'store', 'destroy', 'edit', 'update']);
 
+Route::resource('/series/cors', CorsController::class)->except(['show']);
+
+
 Route::get('/series/{series}/seasons', [SeasonsController::class, 'index'])->name('seasons.index');
 
-Route::get('/delta-create', [SeriesController::class, 'deltaCreate'])->name('delta.create');
+
+
+
 
 

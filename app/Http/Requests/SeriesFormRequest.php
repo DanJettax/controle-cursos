@@ -29,7 +29,7 @@ class SeriesFormRequest extends FormRequest
             'vin' => ['required'],
             'model' => ['required'],
             'part' => ['required'],
-            'deltas' => ['required'],
+            'delta' => ['required'],
             'result_15' => ['required'],
             'result_25' => ['required'],
             'result_45' => ['required'],

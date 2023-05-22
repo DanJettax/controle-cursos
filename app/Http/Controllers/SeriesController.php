@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SeriesFormRequest;
+use App\Models\Cor;
 use App\Models\Delta;
 use App\Models\Episode;
+use App\Models\Modelo;
+use App\Models\Parte;
 use App\Models\Season;
 use App\Models\Series;
 use Illuminate\Http\Request;
@@ -21,20 +24,27 @@ class SeriesController extends Controller
             ->with('mensagemSucesso', $mensagemSucesso);
     }
 
-    /*public function create()
-    {
-        return view('series.create');
-
-    }*/
-
-    public function create()
+    public function create(Series $request)
     {
         $deltas = Delta::pluck('nome', 'id');
         return view('series.create', compact('deltas'));
+
     }
 
-    public function store(SeriesFormRequest $request)    {
+    public function createModelo(Request $request)
+    {
+        $modelos = Modelo::pluck('modelo', 'id');
+        return view('series.create', compact('modelos'));
+    }
 
+    public function createParte(Request $request)
+    {
+        $partes = Parte::pluck('parte', 'id');
+        return view('series.create', compact('partes'));
+    }
+
+
+    public function store(SeriesFormRequest $request )    {
 
        $serie = Series::create($request->all());
 
