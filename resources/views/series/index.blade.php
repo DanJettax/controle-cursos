@@ -5,6 +5,6 @@
 
     <a href="{{ route('cors.create') }}" class="btn btn-dark mb-2">Inserir Nova Cor</a>
 
-
-
 </x-layout>
+
+
