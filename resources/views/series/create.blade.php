@@ -1,13 +1,13 @@
-<x-layout title="Nova Inspeção">
+<x-layout title="Tabela de Inspeção de Cor">
     <br><br>
     <form action="{{ route('series.store') }}" method="post">
         @csrf
         <div class="container border">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="color_nome" class="form-label">color_nome</label>
+                    <label for="color_nome"  class="form-label">color_nome</label>
                     <div class="input-group">
-                        <select id="color_nome" name="color_nome" class="form-select">
+                        <select id="color_nome" name="color_nome" class="form-select" autofocus>
                             <option value="">Selecione</option>
                             @foreach ($cors as $id => $nome)
                                 <option value="{{ $id }}">{{ $nome }}</option>
@@ -27,13 +27,13 @@
                     <div class="input-group">
                         <select id="bc_batch" name="bc_batch" class="form-select">
                             <option value="">Selecione</option>
-                            @foreach ($deltas as $id => $nome)
+                            @foreach ($lotes as $id => $nome)
                                 <option value="{{ $id }}">{{ $nome }}</option>
                             @endforeach
                         </select>
                         <div class="input-group-append">
                             <ul class="dropdown-menu">
-                                @foreach ($deltas as $id => $nome)
+                                @foreach ($lotes as $id => $nome)
                                     <option value="{{ $id }}">{{ $nome }}</option>
                                 @endforeach
                             </ul>
@@ -45,35 +45,17 @@
                     <input type="text" autofocus id="vin" name="vin" class="form-control" value="{{ old('vin') }}">
                 </div>
                 <div class="col">
-                    <label for="bc_batch" class="form-label">bc_batch</label>
-                    <div class="input-group">
-                        <select id="bc_batch" name="bc_batch" class="form-select">
-                            <option value="">Selecione</option>
-                            @foreach ($deltas as $id => $nome)
-                                <option value="{{ $id }}">{{ $nome }}</option>
-                            @endforeach
-                        </select>
-                        <div class="input-group-append">
-                            <ul class="dropdown-menu">
-                                @foreach ($deltas as $id => $nome)
-                                    <option value="{{ $id }}">{{ $nome }}</option>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
                     <label for="model" class="form-label">model</label>
                     <div class="input-group">
                         <select id="model" name="model" class="form-select">
                             <option value="">Selecione</option>
-                            @foreach ($deltas as $id => $nome)
+                            @foreach ($modelos as $id => $nome)
                                 <option value="{{ $id }}">{{ $nome }}</option>
                             @endforeach
                         </select>
                         <div class="input-group-append">
                             <ul class="dropdown-menu">
-                                @foreach ($deltas as $id => $nome)
+                                @foreach ($modelos as $id => $nome)
                                     <option value="{{ $id }}">{{ $nome }}</option>
                                 @endforeach
                             </ul>
@@ -85,13 +67,13 @@
                     <div class="input-group">
                         <select id="part" name="part" class="form-select">
                             <option value="">Selecione</option>
-                            @foreach ($deltas as $id => $nome)
+                            @foreach ($partes as $id => $nome)
                                 <option value="{{ $id }}">{{ $nome }}</option>
                             @endforeach
                         </select>
                         <div class="input-group-append">
                             <ul class="dropdown-menu">
-                                @foreach ($deltas as $id => $nome)
+                                @foreach ($partes as $id => $nome)
                                     <option value="{{ $id }}">{{ $nome }}</option>
                                 @endforeach
                             </ul>

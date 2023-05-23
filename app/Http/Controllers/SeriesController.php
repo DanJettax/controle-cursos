@@ -6,6 +6,7 @@ use App\Http\Requests\SeriesFormRequest;
 use App\Models\Cor;
 use App\Models\Delta;
 use App\Models\Episode;
+use App\Models\Lote;
 use App\Models\Modelo;
 use App\Models\Parte;
 use App\Models\Season;
@@ -27,24 +28,19 @@ class SeriesController extends Controller
     public function create(Series $request)
     {
         $deltas = Delta::pluck('nome', 'id');
-        return view('series.create', compact('deltas'));
-
-    }
-
-    public function createModelo(Request $request)
-    {
+        $cors = Cor::pluck('nome', 'id');
+        $lotes = Lote::pluck('numero', 'id');
         $modelos = Modelo::pluck('modelo', 'id');
-        return view('series.create', compact('modelos'));
-    }
-
-    public function createParte(Request $request)
-    {
         $partes = Parte::pluck('parte', 'id');
-        return view('series.create', compact('partes'));
-    }
 
+        return view('series.create',
+            compact(
+                'deltas','cors','lotes','modelos','partes'));
+
+    }
 
     public function store(SeriesFormRequest $request )    {
+
 
        $serie = Series::create($request->all());
 

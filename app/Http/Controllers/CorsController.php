@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SeriesFormRequest;
 use App\Models\Cor;
-use App\Models\Delta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CorsController extends Controller
 {
@@ -14,10 +15,16 @@ class CorsController extends Controller
         return view('series.index')->with('cors', $cors);
     }
 
-    public function create(Request $request)
+    public function create(SeriesFormRequest $request)
     {
-        $cors = Cor::all();
-        return view('series.cor', compact('cors'));
+
+        $cors = Cor::pluck('nome', 'id');
+        return view('series.create', compact('cors'));
     }
+}
+
+
+
+
 }
 

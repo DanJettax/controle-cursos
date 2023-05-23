@@ -23,7 +23,8 @@ Route::get('/', function () {
 Route::resource('/series', SeriesController::class)
     ->only(['index', 'create', 'store', 'destroy', 'edit', 'update']);
 
-Route::resource('/series/cors', CorsController::class)->except(['show']);
+Route::resource('/series/cor', CorsController::class)
+    ->except(['show']);
 
 
 Route::get('/series/{series}/seasons', [SeasonsController::class, 'index'])->name('seasons.index');
