@@ -26,15 +26,15 @@
                 <i class="material-symbols-outlined">login</i>
                 <span>login</span>
             </span>
-            <button onclick="window.location.href = 'https://www.axalta.com/br/pt_BR/repintura-automotiva.html';">
+            <button onclick="window.open('https://www.axalta.com/br/pt_BR/repintura-automotiva.html', '_blank');">
                  <span>
                      <i class="material-symbols-outlined">Check_Circle</i>
                          <span>Axalta</span>
                  </span>
             </button>
-            <button onclick="window.location.href = 'https://www.chatbase.co/chatbot/MtqWO-UNaHcmuIph0nHbk';">
+            <button onclick="window.open('https://www.chatbase.co/chatbot/MtqWO-UNaHcmuIph0nHbk','_blank');">
                  <span>
-                     <i class="material-symbols-outlined">person</i>
+                     <i class="material-symbols-outlined">child_care</i>
                          <span>Théo</span>
                  </span>
             </button>
