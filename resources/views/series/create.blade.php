@@ -3,7 +3,7 @@
     <form action="{{ route('series.store') }}" method="post">
         @csrf
         <div class="container border">
-            <div class="row mb-3">
+            <div class="row mb-2">
                 <div class="col">
                     <label for="color_nome"  class="form-label">color_nome</label>
                     <div class="input-group">
@@ -80,6 +80,24 @@
                         </div>
                     </div>
                 </div>
+                    <div class="col">
+                        <label for="delta" class="form-label">Delta</label>
+                        <div class="input-group">
+                            <select id="delta" name="delta" class="form-select">
+                                <option value="">Selecione</option>
+                                @foreach ($deltas as $id => $nome)
+                                    <option value="{{ $id }}">{{ $nome }}</option>
+                                @endforeach
+                            </select>
+                            <div class="input-group-append">
+                                <ul class="dropdown-menu">
+                                    @foreach ($deltas as $id => $nome)
+                                        <li><a class="dropdown-item" href="#">{{ $nome }}</a></li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
         <br>

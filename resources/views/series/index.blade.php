@@ -26,25 +26,18 @@
                 <i class="material-symbols-outlined">login</i>
                 <span>login</span>
             </span>
-        </button>
-        <button>
-            <span>
-                <i class="material-symbols-outlined">Check_Circle</i>
-                <span>Análises</span>
-            </span>
-        </button>
-        <button>
-            <span>
-                <i class="material-symbols-outlined">Show_chart</i>
-                <span>Gráficos</span>
-            </span>
-        </button>
-        <button>
-            <span>
-                <i class="material-symbols-outlined">person</i>
-                <span>Profile</span>
-            </span>
-        </button>
+            <button onclick="window.location.href = 'https://www.axalta.com/br/pt_BR/repintura-automotiva.html';">
+                 <span>
+                     <i class="material-symbols-outlined">Check_Circle</i>
+                         <span>Axalta</span>
+                 </span>
+            </button>
+            <button onclick="window.location.href = 'https://www.chatbase.co/chatbot/MtqWO-UNaHcmuIph0nHbk';">
+                 <span>
+                     <i class="material-symbols-outlined">person</i>
+                         <span>Théo</span>
+                 </span>
+            </button>
         <button>
             <span>
                 <i class="material-symbols-outlined">Data_Check</i>
