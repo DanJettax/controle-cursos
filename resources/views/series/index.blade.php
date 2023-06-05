@@ -19,7 +19,6 @@
     <header class="sidebar-header">
         <img class="logo-img" src="https://sujeitoprogramador.com/steve.png" alt="foto do usuario">
     </header>
-
     <nav>
         <button>
             <span>
@@ -38,7 +37,7 @@
                          <span>Théo</span>
                  </span>
             </button>
-        <button>
+        <button onclick="window.location.href = '{{ route('series.create') }}';">
             <span>
                 <i class="material-symbols-outlined">Data_Check</i>
                 <span>Tabelas</span>

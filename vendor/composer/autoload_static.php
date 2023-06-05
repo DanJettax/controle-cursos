@@ -524,6 +524,8 @@ class ComposerStaticInit4d6362e3f84fb87432d6bf980eeb8d31
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\CorsController' => __DIR__ . '/../..' . '/app/Http/Controllers/CorsController.php',
+        'App\\Http\\Controllers\\LotesController' => __DIR__ . '/../..' . '/app/Http/Controllers/LotesController.php',
         'App\\Http\\Controllers\\SeasonsController' => __DIR__ . '/../..' . '/app/Http/Controllers/SeasonsController.php',
         'App\\Http\\Controllers\\SeriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/SeriesController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
